@@ -123,4 +123,5 @@ recourses used for type checking(droidcollection output):
 
 ## Known Problems, Issues, And/Or Errors in the Program
 not all input is validated; implies the user is inputing proper data
-no know issues
+
+no other know issues
