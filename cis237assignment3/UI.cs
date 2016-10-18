@@ -129,6 +129,7 @@ namespace cis237assignment3
             }
         }
 
+        // this method will show the different options for model types
         public void modelOptions()
         {
             Console.Clear();
@@ -139,6 +140,7 @@ namespace cis237assignment3
             Console.WriteLine("4) astromech - $325");
         }
 
+        // this method will show the different options for material types
         public void materialOptions()
         {
             Console.Clear();
@@ -148,6 +150,7 @@ namespace cis237assignment3
             Console.WriteLine("3) Tekonite  - $100");
         }
 
+        // this method will show the different options for colors
         public void colorOptions()
         {
             Console.Clear();
@@ -157,6 +160,8 @@ namespace cis237assignment3
             Console.WriteLine("3) orange - $150");
         }
 
+
+        // this method comvers the model int input from the user into a string
         public string setModel(int model)
         {
             switch(model)
@@ -180,6 +185,7 @@ namespace cis237assignment3
             
         }
 
+        // this method converts the material int input from the user into a string
         public string setMaterial(int material)
         {
             switch (material)
@@ -199,6 +205,7 @@ namespace cis237assignment3
             }
         }
 
+        // this method converts the color int input from the user into a string
         public string setColor(int color)
         {
             switch (color)
@@ -218,24 +225,29 @@ namespace cis237assignment3
             }
         }
 
+        // this method does the propper functions / calls to add a protocol droid
         public static void addProtocol(string model, string material, string color, DroidCollection droidCollection)
         {
-
+            // prompt the user for language feature
             Console.Clear();
             Console.WriteLine("Language feature: $300 per language");
             Console.WriteLine("How many languages should the droid know? ");
             int numberOfLanguages = Int32.Parse(Console.ReadLine());
 
+            // call the addDroid method in the droid collection class
+            // pass parameters for protocol droid
             droidCollection.addDroid(model, material, color, numberOfLanguages);
         }
 
-
+        // this method does the propper functions / calls to add a utility droid
         public static void addUtility(string model, string material, string color, DroidCollection droidCollection)
         {
+            // initialize the required bools
             bool toolbox = false;
             bool computerConnection = false;
             bool arm = true;
 
+            // prompt the user for toolbox
             Console.Clear();
             Console.WriteLine("toolbox feature: $100");
             Console.WriteLine("Would you like a toolbox? 1 = yes; 2 = no");
@@ -243,29 +255,36 @@ namespace cis237assignment3
             if (toolboxInt == 1)
                 toolbox = true;
 
-            Console.WriteLine(Environment.NewLine + "Computer connection feature: $100");
+            // prompt the user for computer connection
+            Console.WriteLine(Environment.NewLine + "Computer connection feature: $850");
             Console.WriteLine("Would you like a Computer Connection? 1 = yes; 2 = no");
             int computerConnectionInt = Int32.Parse(Console.ReadLine());
             if (computerConnectionInt == 1)
                 computerConnection = true;
 
-            Console.WriteLine(Environment.NewLine + "Arm feature: $100");
+            // prompt the user for an arm
+            Console.WriteLine(Environment.NewLine + "Arm feature: $600");
             Console.WriteLine("Would you like an arm? 1 = yes; 2 = no");
             int armInt = Int32.Parse(Console.ReadLine());
             if (armInt == 1)
                 arm = true;
 
+            // call the addDroid method in the droid collection class
+            // pass parameters for utility droid
             droidCollection.addDroid(model, material, color, toolbox, computerConnection, arm);
         }
 
+        // this method does the propper functions / calls to add a janitor droid
         public static void addJanitor(string model, string material, string color, DroidCollection droidCollection)
         {
+            // initialize the required bools
             bool toolbox = false;
             bool computerConnection = false;
             bool arm = true;
             bool trashCompactor = false;
             bool vacuum = false;
 
+            // prompt the user for toolbox
             Console.Clear();
             Console.WriteLine("toolbox feature: $100");
             Console.WriteLine("Would you like a toolbox? 1 = yes; 2 = no");
@@ -273,42 +292,49 @@ namespace cis237assignment3
             if (toolboxInt == 1)
                 toolbox = true;
 
-            Console.WriteLine(Environment.NewLine + "Computer connection feature: $100");
+            // prompt the user for computer connection
+            Console.WriteLine(Environment.NewLine + "Computer connection feature: $850");
             Console.WriteLine("Would you like a Computer Connection? 1 = yes; 2 = no");
             int computerConnectionInt = Int32.Parse(Console.ReadLine());
             if (computerConnectionInt == 1)
                 computerConnection = true;
 
-            Console.WriteLine(Environment.NewLine + "Arm feature: $100");
+            // prompt the user for an arm
+            Console.WriteLine(Environment.NewLine + "Arm feature: $600");
             Console.WriteLine("Would you like an arm? 1 = yes; 2 = no");
             int armInt = Int32.Parse(Console.ReadLine());
             if (armInt == 1)
                 arm = true;
 
-            Console.WriteLine(Environment.NewLine + "trash Compactor feature: $100");
+            // prompt the user for trash compactor feature
+            Console.WriteLine(Environment.NewLine + "trash Compactor feature: $500");
             Console.WriteLine("Would you like an trash Compactor? 1 = yes; 2 = no");
             int trashCompactorInt = Int32.Parse(Console.ReadLine());
             if (trashCompactorInt == 1)
                 trashCompactor = true;
 
-            Console.WriteLine(Environment.NewLine + "vacuum feature: $100");
+            // prompt the user for vacuum feature
+            Console.WriteLine(Environment.NewLine + "vacuum feature: $300");
             Console.WriteLine("Would you like an trash Compactor? 1 = yes; 2 = no");
             int vacuumInt = Int32.Parse(Console.ReadLine());
             if (vacuumInt == 1)
                 vacuum = true;
 
+            // call the addDroid method in the droid collection class
+            // pass parameters for janitor droid
             droidCollection.addDroid(model, material, color, toolbox, computerConnection, arm, trashCompactor, vacuum);
         }
 
+        // this method does the propper functions / calls to add an astromech droid
         public static void addAstromech(string model, string material, string color, DroidCollection droidCollection)
         {
+            // initialize the required bools
             bool toolbox = false;
             bool computerConnection = false;
             bool arm = true;
             bool fireExtinguisher = false;
 
-            
-
+            // prompt the user for toolbox feature
             Console.Clear();
             Console.WriteLine("toolbox feature: $100");
             Console.WriteLine("Would you like a toolbox? 1 = yes; 2 = no");
@@ -316,37 +342,45 @@ namespace cis237assignment3
             if (toolboxInt == 1)
                 toolbox = true;
 
-            Console.WriteLine(Environment.NewLine + "Computer connection feature: $100");
+            // prompt the user for computer connection feature
+            Console.WriteLine(Environment.NewLine + "Computer connection feature: $850");
             Console.WriteLine("Would you like a Computer Connection? 1 = yes; 2 = no");
             int computerConnectionInt = Int32.Parse(Console.ReadLine());
             if (computerConnectionInt == 1)
                 computerConnection = true;
 
-            Console.WriteLine(Environment.NewLine + "Arm feature: $100");
+            // prompt the user for arm feature
+            Console.WriteLine(Environment.NewLine + "Arm feature: $600");
             Console.WriteLine("Would you like an arm? 1 = yes; 2 = no");
             int armInt = Int32.Parse(Console.ReadLine());
             if (armInt == 1)
                 arm = true;
 
-            Console.WriteLine(Environment.NewLine + "Arm feature: $100");
-            Console.WriteLine("Would you like an arm? 1 = yes; 2 = no");
+            // prompt the user for fire extinguisher feature
+            Console.WriteLine(Environment.NewLine + "fire extinguisher feature: $200");
+            Console.WriteLine("Would you like a fire extinguisher? 1 = yes; 2 = no");
             int fireExtinguisherInt = Int32.Parse(Console.ReadLine());
             if (fireExtinguisherInt == 1)
                 fireExtinguisher = true;
 
+            // prompt the user for ships feature
             Console.WriteLine(Environment.NewLine + "Ships feature: $300 per ship");
             Console.WriteLine("How many ships would you like? ");
             int numberOfShips = Int32.Parse(Console.ReadLine());
 
+            // call the addDroid method in the droid collection class
+            // pass parameters for astromech droid
             droidCollection.addDroid(model, material, color, toolbox, computerConnection, arm, fireExtinguisher, numberOfShips);
         }
 
-
+        // outputs all of the droid data
         public void outputDroidArray()
         {
             Console.WriteLine();
+            Console.Clear();
             // Get the output string from the droidCollection class's method:
             Console.WriteLine(droidCollection.outputDroidArray());
+            Console.WriteLine();
         }
     }
 }
