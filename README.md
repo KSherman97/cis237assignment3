@@ -114,9 +114,12 @@ It may be beneficial for you to create extra methods within the droid sub classe
 
 ## Outside Resources Used
 recourses used for type checking(droidcollection output):
-	http://stackoverflow.com/questions/983030/type-checking-typeof-gettype-or-is
-	http://net-informations.com/q/faq/type.html
-	https://msdn.microsoft.com/en-us/library/scekt9xw.aspx
+
+	1. http://stackoverflow.com/questions/983030/type-checking-typeof-gettype-or-is
+	
+	2. http://net-informations.com/q/faq/type.html
+	
+	3. https://msdn.microsoft.com/en-us/library/scekt9xw.aspx
 
 ## Known Problems, Issues, And/Or Errors in the Program
 not all input is validated; implies the user is inputing proper data
