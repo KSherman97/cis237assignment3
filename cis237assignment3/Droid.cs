@@ -12,10 +12,12 @@ using System.Threading.Tasks;
 
 namespace cis237assignment3
 {
+    // base class for the droids, implements the idroid interface
     abstract class Droid : IDroid
     {
-        // variables
-        // strings
+        //*****************************************
+        //*             Backing fields            *
+        //*****************************************
         protected string _materialString;
         protected string _modelString;
         protected string _colorString;
@@ -23,12 +25,13 @@ namespace cis237assignment3
         protected decimal materialCost = 0;
         protected decimal modelCost = 0;
         protected decimal colorCost = 0;
-
-        // decimals
         protected decimal _baseCostDecimal;
         private decimal _totalCostDecimal;
-        //protected decimal totalCostDecimal;
 
+
+        //*****************************************
+        //*             Constructor               *
+        //*****************************************
         public Droid(string modelString, string materialString, string colorString)
         {
             _modelString = modelString;
@@ -39,7 +42,10 @@ namespace cis237assignment3
         }
 
 
-        // properties
+
+        //*****************************************
+        //*             Properties                *
+        //*****************************************
         public string Model
         {
             get { return _modelString; }
@@ -63,26 +69,28 @@ namespace cis237assignment3
         }
 
 
-        // methods
-        public override string ToString()
+        //*****************************************
+        //*             Methods                   *
+        //*****************************************
+        public override string ToString()   // tostring override
         {
             return "Model: " + Model + " Cost:";
         }
 
-        public virtual decimal CalculateBaseCost()
+        public virtual decimal CalculateBaseCost() // calculates the base cost from materials, models, and colors
         {
             _baseCostDecimal = 0;
             materialCost = 0;
             modelCost = 0;
             colorCost = 0;
-            calculateModelCost();
-            calculateMaterialCost();
-            calculateColorCost();
+            calculateModelCost(Model);
+            calculateMaterialCost(Material);
+            calculateColorCost(Color);
             _baseCostDecimal = materialCost + modelCost + colorCost;
             return _baseCostDecimal;
         }
 
-        public void calculateModelCost()
+        public void calculateModelCost(string Model)    // calculates the modelcost based on the if statements
         {
             if (Model == "protocol")
             {
@@ -102,7 +110,7 @@ namespace cis237assignment3
             }
         }
 
-        public void calculateMaterialCost()
+        public void calculateMaterialCost(string Material)  // calculates the material cost based on the if statements
         {
             if (Material == "cerillium")
             {
@@ -118,7 +126,7 @@ namespace cis237assignment3
             }
         }
 
-        public void calculateColorCost()
+        public void calculateColorCost(string Color)    // calculates the colorcost based on the if statements
         {
             if (Color == "red")
             {
@@ -134,7 +142,7 @@ namespace cis237assignment3
             }
         }
 
-        public virtual void CalculateTotalCost()
+        public virtual void CalculateTotalCost()   // total cost is equal to the base cost
         {
             totalCostDecimal = CalculateBaseCost();
         }
