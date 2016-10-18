@@ -23,9 +23,9 @@ namespace cis237assignment3
         bool _computerConnection;
         bool _arm;
 
-        int _numberShips = 0;
+        int _numberShips;
         const decimal costPerShip = 300;
-        private decimal totalCostDecimal;
+        private decimal _totalCostDecimal;
 
         //*****************************************
         //*             Constructor               *
@@ -40,6 +40,12 @@ namespace cis237assignment3
             _toolbox = toolbox;
 
             CalculateTotalCost();
+        }
+
+        public decimal TotalCost
+        {
+            get { return _totalCostDecimal; }
+            set { _totalCostDecimal = value; }
         }
 
         //*****************************************
@@ -57,21 +63,11 @@ namespace cis237assignment3
 
         public override void CalculateTotalCost()       // calculates the total cost
         {
-            base.CalculateTotalCost();                  // gets the base total cost (withoud added features)
-            this.totalCostDecimal = base.totalCostDecimal; // assigns the base total to the current total
+           base.CalculateTotalCost();                  // gets the base total cost (withoud added features)
+           this._totalCostDecimal = base.totalCostDecimal; // assigns the base total to the current total
 
             if(_fireExtinguisher)                            // checks to see if a fireextinguisher is added
                 this.totalCostDecimal += 200;               // adds 200 for the fire extinguisher
-
-            if (_toolbox)                                    // checks to see if a toolbox is added
-                this.totalCostDecimal += 100;               // adds the corrosponding price to the total
-
-            if (_computerConnection)                         // checks to see if a computer connection is added
-                this.totalCostDecimal += 850;               // adds 850 for the computer connection
-
-            if (_arm)                                        // checks to see if an arm has been added
-                this.totalCostDecimal += 600;               // adds 600 for the arm
-
 
             this.totalCostDecimal += CostOfShips;           // rolls the ship cose into the new total
         }

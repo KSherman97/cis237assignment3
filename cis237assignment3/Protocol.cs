@@ -19,6 +19,7 @@ namespace cis237assignment3
         //*             Backing fields            *
         //*****************************************
         private int _numberLanguages;
+        private decimal _totalCostDecimal;
         private decimal costPerLanguage = 300;
 
         //*****************************************
@@ -42,6 +43,12 @@ namespace cis237assignment3
             }
         }
 
+        public decimal TotalCost
+        {
+            get { return _totalCostDecimal; }
+            set { _totalCostDecimal = value; }
+        }
+
 
         //*****************************************
         //*             Methods                   *
@@ -53,10 +60,10 @@ namespace cis237assignment3
 
         public override void CalculateTotalCost()           // calculates the total cost for the droid
         {
-            base.CalculateTotalCost();                      // gets the base total cost (withoud added features)
-            this.totalCostDecimal = base.totalCostDecimal;  // assigns the base total to the current total
+            base.CalculateTotalCost();                  // gets the base total cost (withoud added features)
+            this._totalCostDecimal = base.totalCostDecimal; // assigns the base total to the current total
 
-            totalCostDecimal += CostOfLangauages;           // rolls the cost of the number of languages into the total
+            _totalCostDecimal += CostOfLangauages;           // rolls the cost of the number of languages into the total
         }
     }
 }

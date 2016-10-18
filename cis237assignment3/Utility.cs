@@ -22,6 +22,7 @@ namespace cis237assignment3
         bool _toolbox;
         bool _computerConnection;
         bool _arm;
+        private decimal _totalCostDecimal;
 
         //*****************************************
         //*             Constructor               *
@@ -35,6 +36,12 @@ namespace cis237assignment3
             CalculateTotalCost();
         }
 
+        public decimal TotalCost
+        {
+            get { return _totalCostDecimal; }
+            set { _totalCostDecimal = value; }
+        }
+
         //*****************************************
         //*             Methods                   *
         //*****************************************
@@ -45,17 +52,17 @@ namespace cis237assignment3
 
         public override void CalculateTotalCost() // calculates the total cost for the droid
         {
-            base.CalculateTotalCost();                  // gets the base total cost (withoud added features)
-            this.totalCostDecimal = base.totalCostDecimal; // assigns the base total to the current total
+            base.CalculateTotalCost();
+            this._totalCostDecimal = base.totalCostDecimal; // assigns the base total to the current total
 
             if (_toolbox)                                    // checks to see if a toolbox is added
-                this.totalCostDecimal += 100;               // adds the corrosponding price to the total
+                this._totalCostDecimal += 100;               // adds the corrosponding price to the total
 
             if (_computerConnection)                         // checks to see if a computer connection is added
-                this.totalCostDecimal += 850;               // adds 850 for the computer connection
+                this._totalCostDecimal += 850;               // adds 850 for the computer connection
 
             if (_arm)                                        // checks to see if an arm has been added
-                this.totalCostDecimal += 600;               // adds 600 for the arm
+                this._totalCostDecimal += 600;               // adds 600 for the arm
         }
     }
 }
