@@ -12,11 +12,18 @@ using System.Threading.Tasks;
 
 namespace cis237assignment3
 {
+    // inherits from the droid class
     class Protocol : Droid
     {
+        //*****************************************
+        //*             Backing fields            *
+        //*****************************************
         private int numberLanguages;
         private decimal costPerLanguage = 300;
 
+        //*****************************************
+        //*             Constructor               *
+        //*****************************************
         public Protocol(string materialString, string modelString, string colorString, int numberOfLanguages) :
             base(materialString, modelString, colorString)
         {
@@ -24,6 +31,9 @@ namespace cis237assignment3
             CalculateTotalCost();
         }
 
+        //*****************************************
+        //*             Properties                *
+        //*****************************************
         public decimal CostOfLangauages
         {
             get
@@ -32,17 +42,21 @@ namespace cis237assignment3
             }
         }
 
-        public override string ToString()
+
+        //*****************************************
+        //*             Methods                   *
+        //*****************************************
+        public override string ToString()   // tostring method override
         {
             return base.ToString();
         }
 
-        public override void CalculateTotalCost()
+        public override void CalculateTotalCost()           // calculates the total cost for the droid
         {
-            base.CalculateTotalCost();
-            this.totalCostDecimal = base.totalCostDecimal;
+            base.CalculateTotalCost();                      // gets the base total cost (withoud added features)
+            this.totalCostDecimal = base.totalCostDecimal;  // assigns the base total to the current total
 
-            totalCostDecimal += CostOfLangauages; 
+            totalCostDecimal += CostOfLangauages;           // rolls the cost of the number of languages into the total
         }
     }
 }
