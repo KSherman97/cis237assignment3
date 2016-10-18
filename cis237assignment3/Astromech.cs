@@ -47,7 +47,7 @@ namespace cis237assignment3
         //*****************************************
         public override string ToString()   // override for the ToString method
         {
-            return base.ToString();
+            return base.ToString() + Environment.NewLine;
         }
 
         public decimal CostOfShips      // calculates the cost for all added ships
