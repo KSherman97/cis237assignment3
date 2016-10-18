@@ -18,7 +18,7 @@ namespace cis237assignment3
         //*****************************************
         //*             Backing fields            *
         //*****************************************
-        private int numberLanguages;
+        private int _numberLanguages;
         private decimal costPerLanguage = 300;
 
         //*****************************************
@@ -27,7 +27,7 @@ namespace cis237assignment3
         public Protocol(string materialString, string modelString, string colorString, int numberOfLanguages) :
             base(materialString, modelString, colorString)
         {
-            numberLanguages = numberOfLanguages;
+            _numberLanguages = numberOfLanguages;
             CalculateTotalCost();
         }
 
@@ -38,7 +38,7 @@ namespace cis237assignment3
         {
             get
             {
-                return this.numberLanguages * costPerLanguage;
+                return this._numberLanguages * costPerLanguage;
             }
         }
 

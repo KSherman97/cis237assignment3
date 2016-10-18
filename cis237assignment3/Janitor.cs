@@ -19,11 +19,11 @@ namespace cis237assignment3
         //*****************************************
         //*             Backing fields            *
         //*****************************************
-        bool trashCompactor;
-        bool vacuum;
-        bool toolbox;
-        bool computerConnection;
-        bool arm;
+        bool _trashCompactor;
+        bool _vacuum;
+        bool _toolbox;
+        bool _computerConnection;
+        bool _arm;
 
         //*****************************************
         //*             Constructor               *
@@ -31,11 +31,11 @@ namespace cis237assignment3
         public Janitor(string materialString, string modelString, string colorString, bool toolbox, bool computerConnection, bool arm, bool trashCompactor, bool vacuum)
             : base( materialString,  modelString,  colorString,  toolbox,  computerConnection,  arm)
         {
-            trashCompactor = trashCompactor;
-            vacuum = vacuum;
-            toolbox = toolbox;
-            computerConnection = computerConnection;
-            arm = arm;
+            _trashCompactor = trashCompactor;
+            _vacuum = vacuum;
+            _toolbox = toolbox;
+            _computerConnection = computerConnection;
+            _arm = arm;
 
             CalculateTotalCost();
         }
@@ -53,19 +53,19 @@ namespace cis237assignment3
             base.CalculateTotalCost();                  // gets the base total cost (withoud added features)
             this.totalCostDecimal = base.totalCostDecimal; // assigns the base total to the current total
 
-            if (toolbox)                                    // checks to see if a toolbox is added
+            if (_toolbox)                                    // checks to see if a toolbox is added
                 this.totalCostDecimal += 100;               // adds the corrosponding price to the total
 
-            if (computerConnection)                         // checks to see if a computer connection is added
+            if (_computerConnection)                         // checks to see if a computer connection is added
                 this.totalCostDecimal += 850;               // adds 850 for the computer connection
 
-            if (arm)                                        // checks to see if an arm has been added
+            if (_arm)                                        // checks to see if an arm has been added
                 this.totalCostDecimal += 600;               // adds 600 for the arm
 
-            if (trashCompactor)                             // checks to see if a trash compactor has been added
+            if (_trashCompactor)                             // checks to see if a trash compactor has been added
                 this.totalCostDecimal += 500;               // adds 500 for this feature
 
-            if (vacuum)                                     // checks to see if a vacuum has been added
+            if (_vacuum)                                     // checks to see if a vacuum has been added
                 this.totalCostDecimal += 350;               // adds 350 for this feature
         }
     }

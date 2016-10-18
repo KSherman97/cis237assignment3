@@ -86,7 +86,7 @@ namespace cis237assignment3
             calculateModelCost(Model);
             calculateMaterialCost(Material);
             calculateColorCost(Color);
-            _baseCostDecimal = materialCost + modelCost + colorCost;
+            _baseCostDecimal = modelCost + materialCost + colorCost;
             return _baseCostDecimal;
         }
 

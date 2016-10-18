@@ -54,7 +54,7 @@ namespace cis237assignment3
             string allOutPut = "";  // creates a new blank string
             foreach (Droid droid in droidArray) // foreach loop for each droid in the array
             {
-                if(droid != null)   // checks to see if the list is full or not 
+                if (droid != null)   // checks to see if the list is full or not 
                 {
                     // for the type checking I opted to use the "is" expression because it looked the cleanest
                     // reference:   http://stackoverflow.com/questions/983030/type-checking-typeof-gettype-or-is
@@ -65,7 +65,7 @@ namespace cis237assignment3
                     if (droid is Protocol)
                     {
                         // add the results of the ToString overrides to the alloutput string
-                        allOutPut += ((Protocol)droid).ToString() + " " + 
+                        allOutPut += ((Protocol)droid).ToString() + " " +
                             ((Protocol)droid).totalCostDecimal.ToString("c") + Environment.NewLine;
                     }
                     // is the droid of type Utility?

@@ -19,18 +19,18 @@ namespace cis237assignment3
         //*****************************************
         //*             Backing fields            *
         //*****************************************
-        bool toolbox;
-        bool computerConnection;
-        bool arm;
+        bool _toolbox;
+        bool _computerConnection;
+        bool _arm;
 
         //*****************************************
         //*             Constructor               *
         //*****************************************
         public Utility(string materialString, string modelString, string colorString, bool toolbox, bool computerConnection, bool arm) : base( materialString,  modelString,  colorString)
         {
-            toolbox = toolbox;
-            computerConnection = computerConnection;
-            arm = arm;
+            _toolbox = toolbox;
+            _computerConnection = computerConnection;
+            _arm = arm;
 
             CalculateTotalCost();
         }
@@ -48,13 +48,13 @@ namespace cis237assignment3
             base.CalculateTotalCost();                  // gets the base total cost (withoud added features)
             this.totalCostDecimal = base.totalCostDecimal; // assigns the base total to the current total
 
-            if (toolbox)                                    // checks to see if a toolbox is added
+            if (_toolbox)                                    // checks to see if a toolbox is added
                 this.totalCostDecimal += 100;               // adds the corrosponding price to the total
 
-            if (computerConnection)                         // checks to see if a computer connection is added
+            if (_computerConnection)                         // checks to see if a computer connection is added
                 this.totalCostDecimal += 850;               // adds 850 for the computer connection
 
-            if (arm)                                        // checks to see if an arm has been added
+            if (_arm)                                        // checks to see if an arm has been added
                 this.totalCostDecimal += 600;               // adds 600 for the arm
         }
     }
