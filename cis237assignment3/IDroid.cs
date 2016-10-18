@@ -10,12 +10,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+
+// droid interface class
+// creates the variables that must exist in the child classes
 namespace cis237assignment3
 {
     interface IDroid
     {
-        void CalculateTotalCost();
+        void CalculateTotalCost();   // total cost void method
 
-        decimal totalCostDecimal { get; set; }
+        decimal totalCostDecimal { get; set; }  // total cost decimal
     }
 }

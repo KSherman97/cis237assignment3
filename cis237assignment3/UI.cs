@@ -10,24 +10,32 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+// UI class.
+// holds all methods for the user interface
 namespace cis237assignment3
 {
     class UI
     {
+        // instantiates the droid collection class
         private DroidCollection droidCollection = new DroidCollection();
 
+        // used for testing
         public override string ToString()
         {
             return "Welcome to the EMPIRE DROID EMPORIUM";
         }
 
+        // gets the user input and returns it as an integer
         public int GetUserInput()
         {
-            this.PrintMainMenu();
-            string userOptionString = Console.ReadLine();
+            this.PrintMainMenu(); // calls the print main menu method
+            string userOptionString = Console.ReadLine(); // stores the user input as a string
 
+            // checks to see if the input is within the defined constraints
             while(userOptionString != "1" && userOptionString != "2" && userOptionString != "3")
             {
+                // if it is not within the constraints then 
+                // let the user no and promt them for input again
                 Console.Clear();
                 Console.WriteLine("That is not a valid option.");
                 Console.WriteLine("Press any key to continue.");
@@ -37,6 +45,8 @@ namespace cis237assignment3
                 this.PrintMainMenu();
                 userOptionString = Console.ReadLine();
             }
+            // try catch throws any errors if incorrect input is 
+            // entered by the user; user must enter an integer
             try
             {
                 return Int32.Parse(userOptionString);
@@ -50,6 +60,8 @@ namespace cis237assignment3
             }
         }
 
+        // print main menu method
+        // displays the main menu
         public void PrintMainMenu()
         {
             Console.WriteLine("EMPIRE DROID EMPORIUM");
@@ -59,47 +71,54 @@ namespace cis237assignment3
             Console.Write(Environment.NewLine + "What would you like to do? ");
         }
 
+        // main menu method
+        // logic for what to do based on user input
         public void mainMenu()
         {
             Console.Clear();
 
+            // store the users input as an integer
             int userChoice = GetUserInput();
 
-            while (userChoice != 3)
+            while (userChoice != 3) // check to see if the user has entered the exit code
             {
-                if (userChoice == 1)
+                if (userChoice == 1) // checks to see if the user entered a 1: add a new droid
                 {
                     Console.Clear();
-                    modelOptions();
-                    int model = Int32.Parse(Console.ReadLine());
+                    modelOptions(); // call the modelOptions method
+                    int model = Int32.Parse(Console.ReadLine());    // stores user input as an integer
 
-                    materialOptions();
-                    int material = Int32.Parse(Console.ReadLine());
+                    materialOptions(); // call the materialOptions method
+                    int material = Int32.Parse(Console.ReadLine()); // stores user input as an integer
 
-                    colorOptions();
-                    int color = Int32.Parse(Console.ReadLine());
+                    colorOptions(); // call the colorOptions method
+                    int color = Int32.Parse(Console.ReadLine()); // stores user input as an integer
 
-                    if (model == 1)
+                    if (model == 1) // if the user entered a 1 for the model
                     {
+                        // call the add protocol droid method
                         addProtocol(setModel(model), setMaterial(material), setColor(color), droidCollection);
                     }
-                    else if (model == 2)
+                    else if (model == 2) // if the user entered a 1 for the model
                     {
+                        // call the add Utility droid method
                         addUtility(setModel(model), setMaterial(material), setColor(color), droidCollection);
                     }
-                    else if (model == 3)
+                    else if (model == 3) // if the user entered a 1 for the model
                     {
+                        // call the add Janitor droid method
                         addJanitor(setModel(model), setMaterial(material), setColor(color), droidCollection);
                     }
-                    else if (model == 4)
+                    else if (model == 4) // if the user entered a 1 for the model
                     {
+                        // call the add Astromech droid method
                         addAstromech(setModel(model), setMaterial(material), setColor(color), droidCollection);
                     }
                 }
-                if (userChoice == 2)
+                if (userChoice == 2) // checks to see if the user entered a 2: view all droids
                 {
                     Console.Clear();
-                    outputDroidArray();
+                    outputDroidArray(); // call the output droid array method
                 }
 
                 // redisplay the main menu when an if statement is done doing its work
